@@ -204,47 +204,6 @@
             </div>
             <button id="btn" onclick="document.querySelector('img').style.display='none';">remove background</button>
         </div>
-        
-        <script>
-            var lastPoint = { x: 0, y: 0 };
-            function distFromLast(x, y) {
-                return Math.sqrt(
-                    Math.pow(x - lastPoint.x, 2) +
-                    Math.pow(y - lastPoint.y, 2)
-                );
-            }
-            var ll = [];
-            function printPoint(event) {
-                // const x = event.clientX;
-                // const y = event.clientY;
-                const x = event.offsetX;
-                const y = event.offsetY;
-                console.log(x, y);
-                console.log(distFromLast(x, y));
-                ll.push(`${x} ${y}`)
-                lastPoint = { x, y };
-                const ch = document.createElement('div');
-                ch.style = `background-color:red;position:absolute;top:${y}px;left:${x}px;width:2px;height:2px;`;
-                document.body.appendChild(ch);
-            }
-
-            var rev = true;
-            async function loop() {
-                const e = document.getElementById('bearHead');
-                e.style.transformOrigin="150px 176px";
-                const max = 10;
-                // console.log('---------');
-                for(let i = 0; i <= max; i++) {
-                    var vv = rev ? i : max - i;
-                    // console.log(vv);
-                    e.style.transform=`rotate(${vv}deg)`;
-                    await new Promise(r => setTimeout(r, 10));
-                }
-                rev = !rev;
-                setTimeout(loop, 2000);
-            }
-            loop();
-        </script>
 
 <svg id="next-svg" width="160" height="240" viewBox="0 0 142 240" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <path d="M18.5 132L24.5 126L32 131L42.5 136L60 139.5L78.5 137.5L97 131L104.5 137.5L109.5 145.5L114 156.5V165L109.5 173.5L100 181.5V192L96.5 206L85.5 219.5L69 227H57L43.5 222L34 212.5L26.5 198.5L24.5 183.5V171.5L16 165L12 156.5L14.5 145.5L18.5 132Z" fill="#E29500" stroke="black"/>
