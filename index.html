@@ -30,7 +30,7 @@
                 transform: rotate(10deg);
                 transform-origin: center 38%;
                 animation-name: beary;
-                animation-duration: 5s;
+                animation-duration: 4s;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
             }
@@ -64,6 +64,36 @@
                     height: calc(100vh - 8px);
                 }
             }
+            .shakey {
+                animation-name: watery-eyes;
+                animation-duration: 200ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                transform-origin: center center;
+            }
+            @keyframes watery-eyes {
+                0% {
+                    transform: none;
+                }
+                100% {
+                    transform: rotateZ(1deg);
+                }
+            }
+            .heart {
+                animation-name: hearty;
+                animation-duration: 500ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                transform-origin: center 60%;
+            }
+            @keyframes hearty {
+                0% { transform: scale(0.95); }
+                5% { transform: scale(0.975); }
+                10% { transform: scale(0.95); }
+                15% { transform: scale(1); }
+                50% { transform: scale(0.95); }
+                100% { transform: scale(0.95); }
+            }
         </style>
     </head>
     <body>
@@ -88,7 +118,7 @@
 		L26.8,130l4.1-9.5l26.5-0.7"/>
 </g>
 <g id="Layer_8">
-	<path class="st1" d="M61.9,177c0,0,36.4-17.5,19.7-30.2c-8.6-4.2-12.9,1.9-12.9,1.9s-3.3-8.7-10.5-7.5S40.8,148.1,61.9,177z"/>
+	<path class="st1 heart" d="M61.9,177c0,0,36.4-17.5,19.7-30.2c-8.6-4.2-12.9,1.9-12.9,1.9s-3.3-8.7-10.5-7.5S40.8,148.1,61.9,177z"/>
 </g>
 <g id="right-arm-v2">
 	<path class="st0" d="M89.9,149.4l-4,1.9c-6.5,3.3-11.1,10.7-9.4,15.4c1.6,4.6,14.2,14.5,25.4,0.1c11.4-14.7-9.9-39.2-9.9-39.2"/>
@@ -132,8 +162,8 @@
 	<ellipse id="right-eye" cx="100.6" cy="77" rx="11.1" ry="10.3"/>
 	<circle id="right-eye-white-big" class="st5" cx="104.5" cy="81.7" r="3"/>
 	<circle id="right-eye-white-sml" class="st5" cx="103.2" cy="76.1" r="1.7"/>
-	<path id="cheek-right" class="st6" d="M111,96.1l-7.5,0.2l9.8-4.2l-13.6,2.1l12.5-4.7l-10.6,1.3l6.9-3.4"/>
-	<path id="cheek-left" class="st6" d="M22.8,85.4l7.4,2.3l-10.7,0.5l13.1,2.5l-13.7,0.1l10.4,2.6l-7.4,1.1"/>
+	<path id="cheek-right" class="st6 shakey" d="M111,96.1l-7.5,0.2l9.8-4.2l-13.6,2.1l12.5-4.7l-10.6,1.3l6.9-3.4"/>
+	<path id="cheek-left" class="st6 shakey" d="M22.8,85.4l7.4,2.3l-10.7,0.5l13.1,2.5l-13.7,0.1l10.4,2.6l-7.4,1.1"/>
 	<ellipse cx="67.6" cy="86.4" rx="6.4" ry="7.7"/>
 </g>
 </svg>
